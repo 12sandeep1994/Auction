@@ -16,7 +16,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run tsc && node --inspect build/app.js",
+    "devStart": "npm run tsc && node --inspect build/app.js",
+    "start": "node build/app.js",
     "tsc": "tsc"
   },
   "author": "Srikar",

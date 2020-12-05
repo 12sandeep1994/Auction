@@ -1,8 +1,10 @@
 import express from "express";
 
 var app = express();
-var PORT = 5000;
-var server = app.listen(PORT);
+var PORT = process.env.port || 5000;
+var server = app.listen(PORT , () => {
+    console.log("Server running on port"+PORT)
+});
 var io = require('socket.io')(server , {
     cors: {
       origin: "http://localhost:3000",

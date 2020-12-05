@@ -6,7 +6,11 @@ To run the server follow the steps.
     ->  "npm install"
     ->  "npm start"
 
-
+To run the client follow the steps.
+1. Go to the client_app folder.
+2. Run the following commands
+    ->  "npm install"
+    ->  "npm start"
 
 
 If you are using VSCODE as IDE.

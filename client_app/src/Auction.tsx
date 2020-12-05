@@ -61,6 +61,8 @@ const Auction : React.FC<Props> = (props)  => {
     let [biddingItemId, setBiddingItemId] = useState("");
     let [biddingItemPrice, setBiddingItemPrice] = useState(0);
 
+    // const url = "http://higherlayerproject-env.eba-8i2qjbtg.us-east-1.elasticbeanstalk.com"
+    const url = "http://localhost:5000"
 
 
     // return (
@@ -88,7 +90,7 @@ const Auction : React.FC<Props> = (props)  => {
         setUserId(userIdFromLogin);
 
         (async function checkUserId(userIdFromLogin : number) {
-             let response = await fetch("http://localhost:5000/userId",{
+             let response = await fetch(url+"/userId",{
                 method: "POST",
                 headers: {
                     Accept: "application/json",
@@ -109,7 +111,7 @@ const Auction : React.FC<Props> = (props)  => {
 
     useEffect( () => {
         (async function getAuctionItems () {
-            let response = await fetch("http://localhost:5000/getAllAuctionItems",{
+            let response = await fetch(url+"/getAllAuctionItems",{
                 method: "GET",
                 headers: {
                     Accept: "application/json",
@@ -177,7 +179,7 @@ const Auction : React.FC<Props> = (props)  => {
             return;
         }
 
-        let response = await fetch("http://localhost:5000/offerSaleItem",{
+        let response = await fetch(url+"/offerSaleItem",{
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -206,7 +208,7 @@ const Auction : React.FC<Props> = (props)  => {
             return;
         }
 
-        let response = await fetch("http://localhost:5000/bidForItem",{
+        let response = await fetch(url+"/bidForItem",{
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -228,7 +230,7 @@ const Auction : React.FC<Props> = (props)  => {
     }
 
     const cancelRegistration = async () => {
-        let response = await fetch("http://localhost:5000/deRegister",{
+        let response = await fetch(url+"/deRegister",{
             method: "POST",
             headers: {
                 Accept: "application/json",

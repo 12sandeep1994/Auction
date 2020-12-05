@@ -18,12 +18,14 @@ function Home() {
     const [registerUserName, setRegisterUserName] = useState("");
     const [newPassword, setNewPassword] = useState("");
     const [newEmail, setNewEmail] = useState("");
+    // const url = "http://higherlayerproject-env.eba-8i2qjbtg.us-east-1.elasticbeanstalk.com"
+    const url = "http://localhost:5000"
 
     const handleLogin = async (event: any) => {
         event.preventDefault();
         if (!email || !password) return;
 
-        let serverResponse = await fetch("http://localhost:5000/login", {
+        let serverResponse = await fetch(url+"/login", {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -50,7 +52,7 @@ function Home() {
         event.preventDefault();
         if (!registerUserName || !newPassword || !newEmail) return;
 
-        let serverResponse = await fetch("http://localhost:5000/register", {
+        let serverResponse = await fetch(url + "/register", {
             method: "POST",
             headers: {
                 Accept: "application/json",
